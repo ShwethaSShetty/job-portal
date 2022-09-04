@@ -1,0 +1,17 @@
+<div class="search-container-wrap">
+    <div class="search-container">
+        <div class="job-search flex-item">
+            <label for="typeahead-job"></label>
+            <input id="typeahead-job" type="text" class="form-control" [(ngModel)]="skill"
+                [ngbTypeahead]="jobSearchResult" placeholder="profession/keywords/company" />
+        </div>
+        <div class="region-search flex-item">
+            <label for="typeahead-region"></label>
+            <input id="typeahead-region" type="text" class="form-control" [(ngModel)]="region"
+                [ngbTypeahead]="regionSearchResult" placeholder="place of work/region" />
+        </div>
+        <div class="search-button">
+            <button (click)="searchJobs()">search</button>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+{
+    "rewrites": [
+      { "source": "/api/v1/meta/:match*", "destination": "https://metadata-api.jobs.ch/api/v1/meta/:match*" },
+      { "source": "/api/v1/public/:match*", "destination": "https://www.jobs.ch/api/v1/public/:match*" }
+    ]
+  }

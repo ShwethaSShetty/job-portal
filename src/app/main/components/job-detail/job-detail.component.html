@@ -1,0 +1,24 @@
+<section class="job-detail-section">
+    <div class="job-detail-container">
+        <div>
+            <span class="company-name"><h4>{{jobDetail.company_name}}</h4> {{jobDetail.place}}</span>
+        </div>
+        <h2>{{jobDetail.title}}</h2>
+        <div>
+            <span>published Date: {{ jobDetail.publication_date | date : 'MMM d, y'}}</span>
+        </div>
+
+        <div class="iframe-wrapper">
+         <ng-container *ngIf = "jobDetail.external_url.length !=0; else showTemplate">
+        <iframe id="theFrame" [src]="jobDetail.external_url | safe" style="width:100%;" frameborder="0">
+        </iframe>
+         </ng-container>
+      <ng-template #showTemplate>
+        <iframe  id="theFrame" style="width:100%;" frameborder="0" [srcdoc]="jobDetail.template ">
+        </iframe>
+   
+    </ng-template>
+        </div>
+    </div>
+</section>
+

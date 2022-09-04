@@ -1,0 +1,30 @@
+.search-container-wrap {
+    background-color: rgb(8 93 191);
+    display: flex;
+    justify-content: center;
+    padding: 12px 12px 25px;
+    .search-container{
+        display: flex;
+        background-color: rgb(8 93 191);
+        color: #ffffff;
+        width: 70%;
+        justify-content: center;
+        .flex-item{
+            flex: 1;
+            margin-right: 10px;
+            display: flex;
+        }
+        .search-button button{
+            width: 115px;
+            border: 1px solid rgb(2, 26, 103);
+            cursor: pointer;
+            white-space: nowrap;
+            transition: all 125ms ease-out 0s;
+            background-color: rgb(2, 26, 103);
+            color: rgb(255, 255, 255);
+            height: 50px;
+            border-radius: 12%;
+        }
+    
+    }
+}

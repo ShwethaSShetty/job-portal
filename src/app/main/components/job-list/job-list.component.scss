@@ -1,0 +1,125 @@
+.main-wrapper {
+    display: flex;
+    width: 100%;
+
+    aside {
+        width: 30%;
+        border-right: 1px solid rgb(230, 230, 230);
+
+        .job-link {
+            text-decoration: none;
+            color: rgb(77, 77, 77);
+            cursor: pointer;
+        }
+
+        .job-description-wrap {
+            padding: 24px;
+
+            .job-description {
+                min-height: 80px;
+                display: flex;
+            }
+
+            .vacancy-desc {
+                display: flex;
+                flex-direction: column;
+                overflow: hidden;
+
+                span {
+                    font-size: 14px;
+                }
+
+                .job-title {
+                    color: rgb(0, 64, 153);
+                    font-weight: 600;
+                    margin-bottom: 4px;
+                    margin-right: 8px;
+                    font-size: 16px;
+                    line-height: 1.36;
+                    margin-top: 0px;
+                }
+            }
+
+            .comapny-image {
+                background-color: rgb(255, 255, 255);
+                border: 1px solid rgb(230, 230, 230);
+                border-radius: 2px;
+                /* overflow: hidden; */
+                color: rgb(117, 117, 117);
+                height: 48px;
+                width: 48px;
+                margin-right: 24px;
+                -webkit-box-align: center;
+                align-items: center;
+                align-self: flex-start;
+                display: flex;
+                flex-direction: column;
+                flex-shrink: 0;
+
+                img {
+                    object-fit: contain;
+                    width: 46px;
+                    height: 46px;
+                }
+            }
+        }
+    }
+
+    app-job-detail {
+        width: 70%;
+    }
+
+    .job {
+        padding: 10px;
+    }
+
+    .text-wrapping {
+        display: block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+
+    .pagination {
+        height: 50px;
+        display: flex;
+
+        .navigate {
+            flex: 1 1 15%;
+            background-color: transparent;
+            border: none;
+            border-radius: 2px;
+            font-size: 25px;
+            &.hover-actn:hover{
+                color: rgb(40, 132, 226);
+                text-decoration: none;
+                border-radius: 2px;
+                border: 1px solid  rgb(40, 132, 226);
+            }
+        }
+
+        .results {
+            flex: 1 1 75%;
+            display: flex;
+
+            span {
+                text-align: center;
+                width: 100%;
+                align-self: center;
+            }
+        }
+
+    }
+
+    .no-result{
+        margin: auto;
+        padding-top: 60px;
+    }
+}
+
+#theFrame {
+    min-width: 100%;
+    overflow: auto;
+    height: 859px;
+    width: 100%;
+}

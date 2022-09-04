@@ -1,0 +1,13 @@
+{
+  "/api/v1/meta":{
+    "target": "https://metadata-api.jobs.ch/",
+    "secure": false,
+    "changeOrigin": true
+  },
+  "/api/v1/public": {
+    "target": "https://www.jobs.ch/",
+    "secure": false,
+    "changeOrigin": true
+  }
+  
+}

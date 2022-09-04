@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'job-portal-angular';
+  title = 'job-portal';
+  searchQuery: { skill: string, region: string } = { skill: '', region: '' };
+  constructor() { }
+
+
+  public searchJobs(data: { skill: string, region: string }) {
+    this.searchQuery = data;
+  }
+
 }
