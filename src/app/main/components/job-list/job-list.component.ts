@@ -14,7 +14,7 @@ export class JobListComponent implements OnInit {
   currentPage: number = 0;
   totalPages: number = 0;
   jobDetail$: Observable<any> = new Observable();
-
+  searchResultLoaded: boolean = false;
   @Input()
   get searchQuery(): { skill: string, region: string } { return this._searchQuery; }
   set searchQuery(search: { skill: string, region: string }) {
@@ -34,6 +34,7 @@ export class JobListComponent implements OnInit {
   public searchJobs(data: { skill: string, region: string }, pageNum: number = 1) {
     this.jobDetail$ = this.jobService.getJobsList(data.region, data.skill, pageNum).pipe(
       tap((jobsObj) => {
+        this.searchResultLoaded = true
         this.jobsList = jobsObj.documents;
         this.totalPages = jobsObj.num_pages;
         this.currentPage = jobsObj.current_page;

@@ -1,36 +1,41 @@
 <main class="main-wrapper">
-  <aside *ngIf="jobsList.length > 0; else noResult">
-    <ng-container *ngFor="let job of jobsList">
-      <a class="job-link" (click)="getJobDetail(job)">
-        <div class="job-description-wrap">
-          <div class="job-description">
-            <div class="comapny-image">
-              <img src="{{job?.images[0]?.url}}" />
-            </div>
-            <div class="vacancy-desc">
-              <span class="job-title text-wrapping">{{job?.title}}</span>
-              <span class="text-wrapping"><strong>{{job?.company_name}}</strong></span>
-              <span class="text-wrapping">{{job?.place}}</span>
+  <ng-container  *ngIf="searchResultLoaded">
+    <aside *ngIf="jobsList.length > 0; else noResult">
+      <ng-container *ngFor="let job of jobsList">
+        <a class="job-link" (click)="getJobDetail(job)">
+          <div class="job-description-wrap">
+            <div class="job-description">
+              <div class="comapny-image">
+                <img src="{{job?.images[0]?.url}}" />
+              </div>
+              <div class="vacancy-desc">
+                <span class="job-title text-wrapping">{{job?.title}}</span>
+                <span class="text-wrapping"><strong>{{job?.company_name}}</strong></span>
+                <span class="text-wrapping">{{job?.place}}</span>
+              </div>
             </div>
           </div>
-        </div>
-      </a>
-    </ng-container>
+        </a>
+      </ng-container>
+  
+      <div class="pagination">
+        <div class="navigate" [hidden]="currentPage!=1"></div>
+        <button class="navigate hover-actn" [hidden]="currentPage==1" (click)="nextPage(false)"> &#x3c; </button>
+        <div class="results"><span>{{currentPage}}/{{totalPages}}</span></div>
+        <button class="navigate hover-actn" [disabled]="totalPages==currentPage" (click)="nextPage(true)"> &#x3e;
+        </button>
+      </div>
+    </aside>
 
-    <div class="pagination">
-      <div class="navigate" [hidden]="currentPage!=1"></div>
-      <button class="navigate hover-actn" [hidden]="currentPage==1" (click)="nextPage(false)"> &#x3c; </button>
-      <div class="results"><span>{{currentPage}}/{{totalPages}}</span></div>
-      <button class="navigate hover-actn" [disabled]="totalPages==currentPage" (click)="nextPage(true)"> &#x3e;
-      </button>
-    </div>
-  </aside>
+    <ng-template #noResult>
+      <h2 class="no-result">No Result Found</h2>
+    </ng-template>
+  </ng-container>
+
 
   <ng-container *ngIf="jobDetail$ | async as jobDetail">
     <app-job-detail [jobDetail]="jobDetail"></app-job-detail>
   </ng-container>
 
-  <ng-template #noResult>
-    <h2 class="no-result">No Result Found</h2>
-  </ng-template>
+
 </main>

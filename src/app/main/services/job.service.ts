@@ -13,7 +13,7 @@ export class JobService {
 
   constructor(private http: HttpClient) { }
 
-  // api to retrive the skills/keywords for typeahead 
+  // api to retrieve the skills/keywords for typeahead 
   public skillSearch(term: string, limit: number = 5): Observable<any> {
     if (term === '') {
       return of([]);
@@ -24,7 +24,7 @@ export class JobService {
       );
   }
 
-  // api to retrive the regions/places for typeahead 
+  // api to retrieve the regions/places for typeahead 
   public regionSearch(term: string, rows: number = 5, subTypes: string = "city"): Observable<any> {
     if (term === '') {
       return of([]);
@@ -35,7 +35,7 @@ export class JobService {
       );
   }
 
-  /*Api to retrive the list of jobs. the default row size is configured to 20 ,
+  /*Api to retrieve the list of jobs. the default row size is configured to 20 ,
   which indicates the number of records per search.
   This is a pagination supported Api
   */
